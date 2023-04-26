@@ -16,7 +16,7 @@
                     </div>
                     <div class="valdiv1 ms-2"
                         *ngIf="this.loginForm.get('empid1')?.errors && this.loginForm.get('empid1')?.touched">
-                        <p>Please enter a valid Employee ID.</p>
+                        <p>Please Enter a Valid Employee ID.</p>
                     </div>
                     <div class="form_control">
                         <input formControlName="psw1" id="p1" name="psw8" required="" class="input" type="password">
@@ -24,12 +24,9 @@
                     </div>
                     <div class="valdiv1 ms-2"
                         *ngIf="this.loginForm.get('psw1')?.errors && this.loginForm.get('psw1')?.touched">
-                        <p>Please enter a valid Password.</p>
+                        <p>Please Enter a Valid Password.</p>
                     </div>
-                    <div class="valdiv1 ms-2"
-                        *ngIf="this.loginForm.get('uname')?.errors && this.loginForm.get('uname')?.touched">
-                        <p>Please enter a valid username.</p>
-                    </div>
+                    
                     <button class="fs-6" (click)="login()" type="submit">LOGIN</button>
 
                     <span class="bottom_text text-light">Don't have an account? <label class="swtich"
@@ -47,12 +44,12 @@
                 <form [formGroup]="registerForm" class="form">
                     <span class="title text-light">Sign Up</span>
                     <div class="form_control">
-                        <input formControlName="empid2" id="u1" name="uname" required="" class="input" type="email">
+                        <input formControlName="empid2" id="u1" name="uname" required="" class="input" type="text" >
                         <label class="label text-light">Employee ID</label>
                     </div>
                     <div class="valdiv1 ms-2"
                         *ngIf="this.registerForm.get('empid2')?.errors && this.registerForm.get('empid2')?.touched">
-                        <p>Please enter a valid Employee ID.</p>
+                        <p>Please Enter a Valid Employee ID.</p>
                     </div>
 
                     <div class="form_control">
@@ -61,23 +58,23 @@
                     </div>
                     <div class="valdiv1 ms-2"
                         *ngIf="this.registerForm.get('uname')?.errors && this.registerForm.get('uname')?.touched">
-                        <p>Please enter a valid Username.</p>
+                        <p>Please Enter a Valid Username.</p>
                     </div>
                     <div class="form_control">
-                        <input formControlName="jobt" id="position" name="job" required="" class="input" type="email">
+                        <input formControlName="jobt" id="position" name="job" required="" class="input" type="text">
                         <label class="label text-light">Job title</label>
                     </div>
                     <div class="valdiv1 ms-2"
                         *ngIf="this.registerForm.get('jobt')?.errors && this.registerForm.get('jobt')?.touched">
-                        <p>Please enter a valid Job title.</p>
+                        <p>Please Enter a Valid Job title.</p>
                     </div>
                     <div class="form_control">
-                        <input formControlName="loc" id="place" name="locc" required="" class="input" type="email">
+                        <input formControlName="loc" id="place" name="locc" required="" class="input" type="text">
                         <label class="label text-light">Location</label>
                     </div>
                     <div class="valdiv1 ms-2"
                         *ngIf="this.registerForm.get('loc')?.errors && this.registerForm.get('loc')?.touched">
-                        <p>Please enter a valid Location.</p>
+                        <p>Please Enter a Valid Location.</p>
                     </div>
 
                     <div class="form_control">
@@ -86,7 +83,7 @@
                     </div>
                     <div class="valdiv1 ms-2"
                         *ngIf="this.registerForm.get('psw2')?.errors && this.registerForm.get('psw2')?.touched">
-                        <p>Please enter a valid Password.</p>
+                        <p>Please Enter a Valid Password.</p>
                     </div>
 
                     <button class="fs-5" (click)="register()">SIGN UP</button>
