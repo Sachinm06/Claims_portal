@@ -1,1 +1,20 @@
-<p>admin-login works!</p>
+<div class="container col-lg-4 col-md-6 col-sm-12 mt-5">
+    <form [formGroup]="adminForm" action="">
+        <div class="card">
+            <a class="login mt-3">ADMIN LOGIN</a>
+            <div class="inputBox">
+                <input formControlName="adminid" id="ac2" name="acno2" type="text" required="required">
+                <span class="user">Username</span>
+            </div>
+
+            <div class="inputBox">
+                <input formControlName="apsw" id="p2" name="psw2" type="password" required="required">
+                <span>Password</span>
+            </div>
+
+            <button (click)="adminlogin()" class="enter">Enter</button>
+            <span class="bottom_text text-black mb-3">Are you an employee? <a class=" swtich"
+                    style="text-decoration: none;" routerLink="">LOGIN</a></span>
+        </div>
+    </form>
+</div>

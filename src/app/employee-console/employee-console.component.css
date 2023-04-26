@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+
+
+h3 {
+	margin: 10px 0;
+  text-transform: uppercase;
+}
+
+h6 {
+	margin: 5px 0;
+	text-transform: capitalize;
+}
+
+/* p {
+	font-size: 14px;
+	line-height: 21px;
+} */
+.udiv{
+  display: flex;
+/* align-items: center; */
+justify-content: center;
+}
+
+.card-container {
+	background-color: #231E39;
+	border-radius: 20px;
+	box-shadow: 10px 30px 20px 10px rgba(0,0,0,0.75);
+	color: #B3B8CD;
+	margin-top: 60px;
+	width: 450px;
+	max-width: 100%;
+	text-align: center;
+  
+}
+
+.card-container .round {
+	border: 1px solid #03BFCB;
+	border-radius: 50%;
+	padding: 7px;
+  width: 200px;
+}
+
+
+
+
+
+
+/* -----------------submit box------------------- */
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+    /* box-shadow: 10px 30px 20px 10px rgba(66, 64, 64, 0.568); */
+
+  }
+  
+  .title {
+    font-size: 28px;
+    color: royalblue;
+    font-weight: 600;
+    letter-spacing: -1px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+  }
+  
+  .title::before,.title::after {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    left: 0px;
+    background-color: royalblue;
+  }
+  
+  .title::before {
+    width: 18px;
+    height: 18px;
+    background-color: royalblue;
+  }
+  
+  .title::after {
+    width: 18px;
+    height: 18px;
+    animation: pulse 1s linear infinite;
+  }
+  
+  .message, .signin {
+    color: rgba(88, 87, 87, 0.822);
+    font-size: 20px;
+  }
+  
+  .signin {
+    text-align: center;
+  }
+  
+  .signin a {
+    color: royalblue;
+  }
+  
+  .signin a:hover {
+    text-decoration: underline royalblue;
+  }
+  
+  .flex {
+    display: flex;
+    width: 100%;
+    gap: 6px;
+  }
+  
+  .form label {
+    position: relative;
+  }
+  
+  .form label .input {
+    width: 100%;
+    padding: 10px 10px 20px 10px;
+    outline: 0;
+    border: 1px solid rgba(105, 105, 105, 0.397);
+    border-radius: 10px;
+  }
+  
+  .form label .input + span {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    color: grey;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+  }
+  
+  .form label .input:placeholder-shown + span {
+    top: 15px;
+    font-size: 0.9em;
+  }
+  
+  .form label .input:focus + span,.form label .input:valid + span {
+    top: 30px;
+    font-size: 0.7em;
+    font-weight: 600;
+  }
+  
+  .form label .input:valid + span {
+    color: green;
+  }
+  
+  .submit {
+    border: none;
+    outline: none;
+    background-color: royalblue;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    transform: .3s ease;
+  }
+  
+  .submit:hover {
+    background-color: rgb(56, 90, 194);
+  }
+  
+  @keyframes pulse {
+    from {
+      transform: scale(0.9);
+      opacity: 1;
+    }
+  
+    to {
+      transform: scale(1.8);
+      opacity: 0;
+    }
+  }
+  .logO{
+    display: flex;
+    justify-content:end;
+    margin-right: 40px;
+    margin-top: -70px;
+}
+.dbtn{
+  color: red;
+}
+.uname{
+  color: black;
+  font-size:20px;
+  font-weight: 500;
+  text-transform: capitalize;
+  display: flex;
+  justify-content: center
+}
+
+
+/* -----------------check status----------------- */@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap");
+
+
+.blog_post {
+  background: #fff;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+}
+
+.img_pod {
+  height: 110px;
+  width: 110px;
+  background: linear-gradient(90deg, #ff9966, #ff5e62);
+  z-index: 10;
+  box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
+  border-radius: 100%;
+  position: absolute;
+  left: -7%;
+  top: -13%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sh3 {
+  color: #999;
+  font-size: 1.25rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  letter-spacing: 0.5px;
+  color: #333;
+}
+
+.sp {
+  font-size: 1.5rem;
+  line-height: 1.45;
+  color: #333;
+}
+
+span{
+  display: flex;
+  gap: 90px;
+
+}
+.spanDiv{
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  /* margin-left: 122px; */
+  gap: 20px;
+
+  
+}

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { DataService } from '../services/data.service';
 })
 export class LoginRegisterComponent {
 
-  constructor(private fb: FormBuilder, private router: Router, private ds: DataService) { }
+  constructor(private fb: FormBuilder, private router: Router, private ds: DataService, private toastr: ToastrService) { }
 
 
   loginForm = this.fb.group({
@@ -37,17 +38,17 @@ export class LoginRegisterComponent {
         localStorage.setItem("currentempid1", JSON.stringify(result.currentempid1))
         localStorage.setItem("token", JSON.stringify(result.token))
 
-        alert(result.message)
+        this.toastr.success(result.message)
         this.router.navigateByUrl("employee-console")
       },
 
         result => {
-          alert(result.error.message)
+          this.toastr.error(result.error.message)
         }
       )
     }
     else {
-      alert('invalid form')
+      this.toastr.warning('invalid form')
     }
   }
 
@@ -61,18 +62,17 @@ export class LoginRegisterComponent {
     if (this.registerForm.valid) {
       this.ds.register(empid2, uname, jobt, loc, psw2).subscribe((result: any) => {
 
-        alert(result.message)
-        // this.router.navigateByUrl("login()")
+        this.toastr.success(result.message)
 
       },
         result => {
-          alert(result.error.message)
+          this.toastr.error(result.error.message)
           this.router.navigateByUrl("")
         }
       )
     }
     else {
-      alert('invalid form')
+      this.toastr.warning('invalid form')
     }
   }
 

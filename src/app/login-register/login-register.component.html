@@ -1,15 +1,18 @@
-<div class="container-fluid w-100">
+<div class="container-fluid w-100 ">
 
     <div class="row">
-        <div class="container mt-5">
+        <div class="loginimg col-lg-5 col-md-6 col-sm-12 ">
+            <img class="loginimg w-100  " src="https://i.postimg.cc/4dY4CmF4/l1.png" alt="">
+        </div>
+        <div class="container mt-2 ">
             <input id="register_toggle" type="checkbox">
-            <div class="slider">
+            <div class="slider col-lg-5 col-md-6 col-sm-12">
 
 
                 <!-- ----------------------------------------loginForm-------------------------------------------------- -->
 
                 <form class="form" [formGroup]="loginForm">
-                    <span class="title text-white">Login</span>
+                    <span class="title text-white">Sign in</span>
                     <div class="form_control">
                         <input formControlName="empid1" id="ac1" name="empI" required="" class="input" type="text">
                         <label class="label text-light">Employee ID</label>
@@ -26,7 +29,7 @@
                         *ngIf="this.loginForm.get('psw1')?.errors && this.loginForm.get('psw1')?.touched">
                         <p>Please Enter a Valid Password.</p>
                     </div>
-                    
+
                     <button class="fs-6" (click)="login()" type="submit">LOGIN</button>
 
                     <span class="bottom_text text-light">Don't have an account? <label class="swtich"
@@ -44,7 +47,7 @@
                 <form [formGroup]="registerForm" class="form">
                     <span class="title text-light">Sign Up</span>
                     <div class="form_control">
-                        <input formControlName="empid2" id="u1" name="uname" required="" class="input" type="text" >
+                        <input formControlName="empid2" id="u1" name="uname" required="" class="input" type="text">
                         <label class="label text-light">Employee ID</label>
                     </div>
                     <div class="valdiv1 ms-2"
