@@ -1,20 +1,23 @@
-<div
-    div class="logO">
+<div div class="logO">
     <button class="btn btn-danger c" (click)="logout()">Logout</button>
 </div>
 
 <div class="row  w-100 mb-5">
-    <div></div>
-    <div class="col-lg-6 col-md-6 col-sm-12 udiv">
-        <div class="card-container">
+    <div class="col-lg-6 col-md-6 col-sm-12 outer ">
+        <div>
+            <img class="round mt-5" src="https://i.postimg.cc/CMPXJ4zj/ulogo1.png" alt="user" />
+        </div>
+        <div class="card-container ms-5 ">
 
-            <img class="round mt-2" src="https://i.postimg.cc/CMPXJ4zj/ulogo1.png" alt="user" />
             <h3 class="mt-1">{{user}}</h3>
-            <h6>Developer</h6>
-            <p class="mb-2">User interface designer and <br /> front-end developer</p>
-
+            <h5><i class="fa-solid fa-briefcase text-warning"></i>&nbsp;&nbsp;{{role}}</h5>
+            <h6><i class="fa-solid fa-location-dot text-danger"></i> &nbsp;&nbsp;{{location}}</h6>
+        </div><br>
+        <div class=" tagline2">
+            <h3 class="tagline1">" Simplify your expense management and get reimbursed faster with us "</h3>
         </div>
     </div>
+
     <div class="col-lg-6 col-md-6 col-sm-12">
         <form [formGroup]="employeeForm" class="form container mt-5">
             <p class="message text-center">WELCOME <span class="uname">{{user}} </span> &nbsp; Please update your
@@ -52,21 +55,29 @@
 <hr class="text-white">
 
 <div class="statusC">
-    <div class="blog_post container w-75 mt-5 mb-5" *ngFor="let i of uArray">
+    <div class="blog_post container w-75 mt-4 mb-5" *ngFor="let i of uArray">
         <div class="img_pod">
             <h5 class="text-white">Pending</h5>
         </div>
         <div class="container_copy">
-            <span>
+            <div class="item">
                 <h3 class="sh3">{{i.Date}}</h3>
-                <p class="sp">{{i.Reason}}</p>
-                <h1>&#x20B9;{{i.amount}}</h1>
-                <span class="spanDiv">
-                    <button class="btn btn-success">Edit</button>
-                    <button class="btn btn-danger">Delete</button>
-                </span>
+            </div>
+            <div class="item">
+                <p class="sp text-white">{{i.Reason}}</p>
+            </div>
+            <div class="item">
+                <h1 class="text-white">&#x20B9;{{i.Amount}}</h1>
+            </div>
+            <span class="spanDiv">
+                <button (click)="deleteClaim(i.id)" class="btn btn-danger">Delete</button>
             </span>
+
         </div>
 
     </div>
 </div>
+
+<footer >
+    <p>sachinm06@aol.com</p>
+</footer>

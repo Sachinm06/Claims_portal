@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -11,14 +12,20 @@ import { DataService } from '../services/data.service';
 export class EmployeeConsoleComponent {
 
   user: any
+  role: any
+  location: any
   uArray: any
 
 
-  constructor(private router: Router, private fb: FormBuilder, private ds: DataService) {
+  constructor(private router: Router, private fb: FormBuilder, private ds: DataService, private toastr: ToastrService) {
     this.user = localStorage.getItem("currentUser")
+    this.role = localStorage.getItem("currentUsertitle")
+    this.location = localStorage.getItem("currentlocation")
 
-    this.ds.viewStatus(JSON.parse(localStorage.getItem("currentstudentid") || "")).subscribe((result: any) => {
-      this.uArray = result.transactions
+    this.ds.viewStatus(JSON.parse(localStorage.getItem("currentempid1") || "")).subscribe((result: any) => {
+      this.uArray = result.claims
+      this.uArray = this.uArray.reverse();
+
     })
   }
 
@@ -39,7 +46,7 @@ export class EmployeeConsoleComponent {
     this.router.navigateByUrl("")
   }
 
-  
+
 
   submitForm() {
     this.reloadPage()
@@ -50,17 +57,44 @@ export class EmployeeConsoleComponent {
     if (this.employeeForm.valid) {
       this.ds.empForm(empid, date, reason, amount).subscribe((result: any) => {
         localStorage.setItem("currentAdmin", result.currentAdmin)
-        alert(result.message)
 
+        // alert(result.message)
+        this.toastr.success(result.message, 'Success', {
+          timeOut: 3000, positionClass: 'toast-top-right',
+        })
       },
         result => {
-          alert(result.error.message)
+          this.toastr.error(result.error.message, 'Error', {
+            timeOut: 3000, positionClass: 'toast-top-right',
+          })
+
+          // alert(result.error.message)
         }
       )
     }
     else {
-      alert('invalid form')
+      this.toastr.warning('invalid form', 'Warning', {
+        timeOut: 3000, positionClass: 'toast-top-right',
+      })
+      // alert('invalid form')
     }
+  }
+
+  deleteClaim(claimid: string) {
+
+    console.log(claimid);
+    this.ds.deleteClaim(claimid).subscribe((result: any) => {
+      this.toastr.success(result.message,'Success',{timeOut: 3000,positionClass: 'toast-top-right',
+    })
+      alert(result.message)
+      this.reloadPage()
+    },
+      result => {
+        this.toastr.error(result.error.message,'Error',{timeOut: 3000,positionClass: 'toast-top-right',
+      })
+        // alert(result.error.message)
+      }
+    )
   }
 
 

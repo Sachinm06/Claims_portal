@@ -1,43 +1,75 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Marck+Script&family=Nova+Oval&family=Oswald&family=Titan+One&family=Vina+Sans&display=swap');
 
 
 
 h3 {
-	margin: 10px 0;
+  margin: 10px 0;
   text-transform: uppercase;
 }
 
 h6 {
-	margin: 5px 0;
-	text-transform: capitalize;
+  margin: 5px 0;
+  text-transform: capitalize;
+}
+
+img {
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  /* display: block; */
+  align-items: center;
+  margin-left: 60px;
+
+}
+.tagline1{
+  color: rgb(170 179 255 / 97%);
+  text-transform: capitalize;
+  font-family: 'Nova Oval', cursive;
+
+}
+.tagline2{
+ position: absolute;
+ margin-top: 35vh;
+ width: 50%;
+ left: 30px;
 }
 
 /* p {
 	font-size: 14px;
 	line-height: 21px;
 } */
-.udiv{
+.udiv {
   display: flex;
-/* align-items: center; */
-justify-content: center;
+  /* align-items: center; */
+  justify-content: center;
+  align-items: center;
+  margin-bottom: auto;
+
 }
 
 .card-container {
-	background-color: #231E39;
-	border-radius: 20px;
-	box-shadow: 10px 30px 20px 10px rgba(0,0,0,0.75);
-	color: #B3B8CD;
-	margin-top: 60px;
-	width: 450px;
-	max-width: 100%;
-	text-align: center;
-  
+  border-radius: 20px;
+  color: #ffffff;
+  margin-top: 60px;
+  text-align: start;
+  display: block;
+  align-items: center;
+  margin-right: 190px;
+  width: 75%;
+
+
+}
+
+.container_copy{
+  display: flex;
+
 }
 
 .card-container .round {
-	border: 1px solid #03BFCB;
-	border-radius: 50%;
-	padding: 7px;
+  /* border: 1px solid #f6f8f8; */
+  border-radius: 50%;
+  padding: 7px;
   width: 200px;
 }
 
@@ -50,149 +82,155 @@ justify-content: center;
 
 
 .form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 500px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 20px;
-    position: relative;
-    /* box-shadow: 10px 30px 20px 10px rgba(66, 64, 64, 0.568); */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 500px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  position: relative;
+  /* box-shadow: 10px 30px 20px 10px rgba(66, 64, 64, 0.568); */
 
-  }
-  
-  .title {
-    font-size: 28px;
-    color: royalblue;
-    font-weight: 600;
-    letter-spacing: -1px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding-left: 30px;
-  }
-  
-  .title::before,.title::after {
-    position: absolute;
-    content: "";
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
-    left: 0px;
-    background-color: royalblue;
-  }
-  
-  .title::before {
-    width: 18px;
-    height: 18px;
-    background-color: royalblue;
-  }
-  
-  .title::after {
-    width: 18px;
-    height: 18px;
-    animation: pulse 1s linear infinite;
-  }
-  
-  .message, .signin {
-    color: rgba(88, 87, 87, 0.822);
-    font-size: 20px;
-  }
-  
-  .signin {
-    text-align: center;
-  }
-  
-  .signin a {
-    color: royalblue;
-  }
-  
-  .signin a:hover {
-    text-decoration: underline royalblue;
-  }
-  
-  .flex {
-    display: flex;
-    width: 100%;
-    gap: 6px;
-  }
-  
-  .form label {
-    position: relative;
-  }
-  
-  .form label .input {
-    width: 100%;
-    padding: 10px 10px 20px 10px;
-    outline: 0;
-    border: 1px solid rgba(105, 105, 105, 0.397);
-    border-radius: 10px;
-  }
-  
-  .form label .input + span {
-    position: absolute;
-    left: 10px;
-    top: 15px;
-    color: grey;
-    font-size: 0.9em;
-    cursor: text;
-    transition: 0.3s ease;
-  }
-  
-  .form label .input:placeholder-shown + span {
-    top: 15px;
-    font-size: 0.9em;
-  }
-  
-  .form label .input:focus + span,.form label .input:valid + span {
-    top: 30px;
-    font-size: 0.7em;
-    font-weight: 600;
-  }
-  
-  .form label .input:valid + span {
-    color: green;
-  }
-  
-  .submit {
-    border: none;
-    outline: none;
-    background-color: royalblue;
-    padding: 10px;
-    border-radius: 10px;
-    color: #fff;
-    font-size: 16px;
-    transform: .3s ease;
-  }
-  
-  .submit:hover {
-    background-color: rgb(56, 90, 194);
-  }
-  
-  @keyframes pulse {
-    from {
-      transform: scale(0.9);
-      opacity: 1;
-    }
-  
-    to {
-      transform: scale(1.8);
-      opacity: 0;
-    }
-  }
-  .logO{
-    display: flex;
-    justify-content:end;
-    margin-right: 40px;
-    margin-top: -70px;
 }
-.dbtn{
+
+.title {
+  font-size: 28px;
+  color: royalblue;
+  font-weight: 600;
+  letter-spacing: -1px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+}
+
+.title::before,
+.title::after {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  left: 0px;
+  background-color: royalblue;
+}
+
+.title::before {
+  width: 18px;
+  height: 18px;
+  background-color: royalblue;
+}
+
+.title::after {
+  width: 18px;
+  height: 18px;
+  animation: pulse 1s linear infinite;
+}
+
+.message,
+.signin {
+  color: rgba(88, 87, 87, 0.822);
+  font-size: 20px;
+}
+
+.signin {
+  text-align: center;
+}
+
+.signin a {
+  color: royalblue;
+}
+
+.signin a:hover {
+  text-decoration: underline royalblue;
+}
+
+.flex {
+  display: flex;
+  width: 100%;
+  gap: 6px;
+}
+
+.form label {
+  position: relative;
+}
+
+.form label .input {
+  width: 100%;
+  padding: 10px 10px 20px 10px;
+  outline: 0;
+  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 10px;
+}
+
+.form label .input+span {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  color: grey;
+  font-size: 0.9em;
+  cursor: text;
+  transition: 0.3s ease;
+}
+
+.form label .input:placeholder-shown+span {
+  top: 15px;
+  font-size: 0.9em;
+}
+
+.form label .input:focus+span,
+.form label .input:valid+span {
+  top: 30px;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+.form label .input:valid+span {
+  color: green;
+}
+
+.submit {
+  border: none;
+  outline: none;
+  background-color: royalblue;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  transform: .3s ease;
+}
+
+.submit:hover {
+  background-color: rgb(56, 90, 194);
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
+.logO {
+  display: flex;
+  justify-content: end;
+  margin-right: 40px;
+  margin-top: -70px;
+}
+
+.dbtn {
   color: red;
 }
-.uname{
+
+.uname {
   color: black;
-  font-size:20px;
+  font-size: 20px;
   font-weight: 500;
   text-transform: capitalize;
   display: flex;
@@ -200,11 +238,12 @@ justify-content: center;
 }
 
 
-/* -----------------check status----------------- */@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap");
+/* -----------------check status----------------- */
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap");
 
 
 .blog_post {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.269);
   max-width: 100%;
   border-radius: 10px;
   box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
@@ -212,13 +251,13 @@ justify-content: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100px;
+  height: 85px;
 }
 
 .img_pod {
   height: 110px;
   width: 110px;
-  background: linear-gradient(90deg, #ff9966, #ff5e62);
+  background: linear-gradient(90deg, #ff996693, #0d05ff);
   z-index: 10;
   box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
   border-radius: 100%;
@@ -231,7 +270,7 @@ justify-content: center;
 }
 
 .sh3 {
-  color: #999;
+  color: rgb(209, 209, 209);
   font-size: 1.25rem;
 }
 
@@ -247,17 +286,47 @@ h1 {
   color: #333;
 }
 
-span{
+span {
   display: flex;
   gap: 90px;
 
 }
-.spanDiv{
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  /* margin-left: 122px; */
-  gap: 20px;
 
-  
+.spanDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin-left: 122px; */
+  /* gap: 20px; */
+
+}
+.outer {
+  display: grid;
+  /* grid-template-rows: 1fr 1fr; two rows with equal height */
+  grid-template-columns: 1fr 10fr 1fr;
+}
+
+.outer > div:first-child {
+  grid-row: 1 / 3; /* the first div spans two rows */
+}
+
+.inner {
+  /* Your inner div styles */
+}
+
+.item{
+  margin: 100px;
+  display: flex;
+  align-items: center;
+
+}
+.container_copy{
+  display: flex;
+  justify-content: center; /* align items horizontally */
+  align-items: center;
+}
+footer{
+  background-color: #133164;
+  color: rgba(255, 255, 255, 0.085);
+  height: 33px;
 }

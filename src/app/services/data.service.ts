@@ -20,15 +20,21 @@ export class DataService {
     return this.http.post('http://localhost:3001/register', data)
   }
 
-  empForm(studentid: any, date: any, reason: any, depname: any): Observable<any> {
-    const data = { studentid, date, reason, depname };
-    return this.http.post<any>('http://localhost:3001/sregister', data);
+  empForm(empid: any, date: any, reason: any, amount: any) {
+    const data = { empid, date, reason, amount };
+    return this.http.post('http://localhost:3001/empForm', data);
   }
 
-  viewStatus(studentid: any) {
+  viewStatus(empid1: any) {
 
-    const data = { studentid }
+    const data = { empid1 }
     return this.http.post('http://localhost:3001/viewStatus', data)
   }
+
+  deleteClaim(claimid:any){
+    const data={claimid}
+    return this.http.post('http://localhost:3001/deleteClaim',data)
+  }
+ 
 
 }

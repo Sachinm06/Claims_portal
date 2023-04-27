@@ -23,15 +23,18 @@ export class AdminLoginComponent {
     var apsw = this.adminForm.value.apsw
     if (this.adminForm.valid) {
       if (adminid == "admin" && apsw == "admin") {
-        this.toastr.success("login success")
+        this.toastr.success("login success",'Success',{timeOut: 3000,positionClass: 'toast-top-right',
+      })
         this.router.navigateByUrl("admin-console")
       }
       else {
-        this.toastr.error("Incorrect username or password")
+        this.toastr.error("Incorrect username or password",'Error',{timeOut: 3000,positionClass: 'toast-top-right',
+      })
       }
     }
     else {
-      this.toastr.warning("invalid form")
+      this.toastr.warning("invalid form",'Warning',{timeOut: 3000,positionClass: 'toast-top-right',
+    })
     }
   }
 

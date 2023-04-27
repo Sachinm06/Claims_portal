@@ -20,8 +20,8 @@ export class LoginRegisterComponent {
   })
   registerForm = this.fb.group({
     empid2: ['', [Validators.required, Validators.pattern('[0-9]+')]],
-    uname: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9]+')]],
-    jobt: ['', [Validators.required, Validators.pattern('[a-zA-Z]+')]],
+    uname: ['', [Validators.required, Validators.pattern('^[a-zA-Z_\\s-]+$')]],
+    jobt: ['', [Validators.required, Validators.pattern('^[a-zA-Z_-]+$')]],
     loc: ['', [Validators.required, Validators.pattern('[a-zA-Z]+')]],
     psw2: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9]+')]]
   })
@@ -35,20 +35,25 @@ export class LoginRegisterComponent {
       this.ds.login(empid1, psw1).subscribe((result: any) => {
 
         localStorage.setItem("currentUser", result.currentUser)
+        localStorage.setItem("currentUsertitle",result.currentUsertitle)
+        localStorage.setItem("currentlocation",result.currentlocation)
         localStorage.setItem("currentempid1", JSON.stringify(result.currentempid1))
         localStorage.setItem("token", JSON.stringify(result.token))
 
-        this.toastr.success(result.message)
+        this.toastr.success(result.message,'Success',{timeOut: 3000,positionClass: 'toast-top-right',
+      })
         this.router.navigateByUrl("employee-console")
       },
 
         result => {
-          this.toastr.error(result.error.message)
+          this.toastr.error(result.error.message,'Error',{timeOut: 3000,positionClass: 'toast-top-right',
+        })
         }
       )
     }
     else {
-      this.toastr.warning('invalid form')
+      this.toastr.warning('invalid form','Warning',{timeOut: 3000,positionClass: 'toast-top-right',
+    })
     }
   }
 
@@ -62,17 +67,20 @@ export class LoginRegisterComponent {
     if (this.registerForm.valid) {
       this.ds.register(empid2, uname, jobt, loc, psw2).subscribe((result: any) => {
 
-        this.toastr.success(result.message)
+        this.toastr.success(result.message,'Success',{timeOut: 3000,positionClass: 'toast-top-right',
+      })
 
       },
         result => {
-          this.toastr.error(result.error.message)
+          this.toastr.error(result.error.message,'Error',{timeOut: 3000,positionClass: 'toast-top-right',
+        })
           this.router.navigateByUrl("")
         }
       )
     }
     else {
-      this.toastr.warning('invalid form')
+      this.toastr.warning('invalid form','warning',{timeOut: 3000,positionClass: 'toast-top-right',
+    })
     }
   }
 
