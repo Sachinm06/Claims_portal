@@ -36,8 +36,13 @@ export class EmployeeConsoleComponent {
     amount: ['', [Validators.required, Validators.pattern('[0-9a-z]+')]]
   })
 
+  // reloadPage() {
+  //   window.location.reload();
+  // }
   reloadPage() {
-    window.location.reload();
+    setTimeout(function () {
+      window.location.reload();
+    }, 1000);
   }
 
   logout() {
@@ -49,7 +54,7 @@ export class EmployeeConsoleComponent {
 
 
   submitForm() {
-    this.reloadPage()
+    // this.reloadPage()
     var empid = this.employeeForm.value.empid
     var date = this.employeeForm.value.date
     var reason = this.employeeForm.value.reason
@@ -58,40 +63,33 @@ export class EmployeeConsoleComponent {
       this.ds.empForm(empid, date, reason, amount).subscribe((result: any) => {
         localStorage.setItem("currentAdmin", result.currentAdmin)
 
-        // alert(result.message)
-        this.toastr.success(result.message, 'Success', {
-          timeOut: 3000, positionClass: 'toast-top-right',
-        })
+        this.toastr.success(result.message);
+
       },
         result => {
-          this.toastr.error(result.error.message, 'Error', {
-            timeOut: 3000, positionClass: 'toast-top-right',
-          })
-
-          // alert(result.error.message)
+          this.toastr.error(result.error.message)
         }
       )
     }
     else {
-      this.toastr.warning('invalid form', 'Warning', {
-        timeOut: 3000, positionClass: 'toast-top-right',
-      })
-      // alert('invalid form')
+      this.toastr.warning('invalid form')
     }
+    this.reloadPage()
+
   }
+
 
   deleteClaim(claimid: string) {
 
     console.log(claimid);
     this.ds.deleteClaim(claimid).subscribe((result: any) => {
-      this.toastr.success(result.message,'Success',{timeOut: 3000,positionClass: 'toast-top-right',
-    })
-      alert(result.message)
+      this.toastr.success(result.message, 'Success', {
+        timeOut: 3000, positionClass: 'toast-top-right',
+      })
       this.reloadPage()
     },
       result => {
-        this.toastr.error(result.error.message,'Error',{timeOut: 3000,positionClass: 'toast-top-right',
-      })
+        this.toastr.error(result.error.message)
         // alert(result.error.message)
       }
     )
