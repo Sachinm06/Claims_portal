@@ -1,1 +1,49 @@
-<p>admin-console works!</p>
+<div class="logO">
+    <button class="btn btn-danger " (click)="logout()">Logout</button>
+</div>
+
+<!-- <div class="card container mb-4" *ngFor="let i of claimArray">
+    <div *ngFor="let j of i.claims">
+        
+        <span class="title">{{j.EmployeeID}}</span>
+        <p class="description">{{j.Date}}</p>
+        <p class="description">{{j.Reason}}</p>
+        <p class="description">&#x20B9;{{j.Amount}}</p>
+
+        <div class="actions">
+            <button class="decline">
+                Decline
+            </button>
+            <button class="valid">
+                Accept
+            </button>
+        </div>
+    </div>
+</div> --> 
+<div class="statusC mt-5">
+    <div class="blog_post container w-75 mt-4 mb-5 " *ngFor="let i of claimArray">
+        <div *ngFor="let j of i.claims">
+
+            <div class="img_pod">
+                <h5 class="text-white">{{i.username}}</h5>
+            </div>
+            <div class="container_copy  ms-4">
+                <div class="item">
+                    <p class="sp mt-1 text-center">{{j.Date}}</p>
+                </div>
+                <div class="item">
+                    <h1 class="text-white text-center">&#x20B9;{{j.Amount}}</h1>
+                </div>
+
+                <div class="item">
+                    <p class="text-white text-center">{{j.Reason}}</p>
+                </div>
+
+                <button class="btn btn-success">Accept</button>
+                <button class="btn btn-danger">Decline</button>
+
+            </div>
+
+        </div>
+    </div>
+</div>

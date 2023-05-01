@@ -35,6 +35,9 @@ export class DataService {
     const data={claimid}
     return this.http.post('http://localhost:3001/deleteClaim',data)
   }
- 
+  adminLogin() {
+    const data = {};
+    return this.http.get('http://localhost:3001/adminLogin', data);
+  }
 
 }

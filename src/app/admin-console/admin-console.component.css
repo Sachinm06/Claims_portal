@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap");
+
+.logO {
+    display: flex;
+    justify-content: end;
+    margin-right: 40px;
+    margin-top: -70px;
+}
+
+
+.blog_post {
+    background: rgb(3 175 215 / 18%);
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
+    position: relative;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    gap: 30px;
+
+}
+
+.img_pod {
+    height: 110px;
+    width: 110px;
+    background: linear-gradient(276deg, #ff6666f0, #05c3ff);
+    z-index: 10;
+    box-shadow: 1px 1px 2rem rgba(0, 0, 0, 0.3);
+    border-radius: 100%;
+    position: absolute;
+    left: -7%;
+    top: -13%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    letter-spacing: 0.5px;
+    color: #333;
+}
+
+
+
+.container_copy {
+    border: 5px solid #00d6ff42;
+    border-radius: 10px;
+}
+
+.sp {
+    color: rgba(0, 0, 0, 0.535);
+}
