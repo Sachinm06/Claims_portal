@@ -25,9 +25,9 @@ export class DataService {
     return this.http.post('http://localhost:3001/empForm', data);
   }
 
-  viewStatus(empid1: any) {
+  viewStatus(empid: any) {
 
-    const data = { empid1 }
+    const data = { empid }
     return this.http.post('http://localhost:3001/viewStatus', data)
   }
 
@@ -35,9 +35,16 @@ export class DataService {
     const data={claimid}
     return this.http.post('http://localhost:3001/deleteClaim',data)
   }
+
   adminLogin() {
     const data = {};
     return this.http.get('http://localhost:3001/adminLogin', data);
+  }
+
+  accept(userN: any) {
+    const data = { userN }
+    return this.http.post('http://localhost:3001/accept', data)
+
   }
 
 }

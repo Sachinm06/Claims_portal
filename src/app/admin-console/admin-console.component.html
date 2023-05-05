@@ -19,13 +19,17 @@
             </button>
         </div>
     </div>
-</div> --> 
+</div> -->
 <div class="statusC mt-5">
     <div class="blog_post container w-75 mt-4 mb-5 " *ngFor="let i of claimArray">
         <div *ngFor="let j of i.claims">
+            <!-- <div><input #employeeid id="employes" name="employe1"   value="{{j.EmployeeID}}" type="text"></div> -->
+            <!-- <h5 #employeeid id="employes" name="employe1" class="text-white">{{ i.username }}</h5> -->
 
             <div class="img_pod">
-                <h5 class="text-white">{{i.username}}</h5>
+                <!-- <h5  class="text-white">{{i.username}}</h5> -->
+                <!-- <h5 #employeeid id="employes" name="employe1" class="text-white">{{ i.username }}</h5> -->
+                <input #userN id="employes" name="employe1"   value="{{i.username}}" type="text" class="text-center empname" readonly>
             </div>
             <div class="container_copy  ms-4">
                 <div class="item">
@@ -39,7 +43,7 @@
                     <p class="text-white text-center">{{j.Reason}}</p>
                 </div>
 
-                <button class="btn btn-success">Accept</button>
+                <button (click)="accept(userN)" class="btn btn-success">Accept</button>
                 <button class="btn btn-danger">Decline</button>
 
             </div>

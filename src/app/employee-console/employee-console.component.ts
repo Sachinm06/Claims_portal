@@ -15,6 +15,7 @@ export class EmployeeConsoleComponent {
   role: any
   location: any
   uArray: any
+  approvel: any
 
 
   constructor(private router: Router, private fb: FormBuilder, private ds: DataService, private toastr: ToastrService) {
@@ -24,6 +25,7 @@ export class EmployeeConsoleComponent {
 
     this.ds.viewStatus(JSON.parse(localStorage.getItem("currentempid1") || "")).subscribe((result: any) => {
       this.uArray = result.claims
+      this.approvel = result.message
       this.uArray = this.uArray.reverse();
 
     })

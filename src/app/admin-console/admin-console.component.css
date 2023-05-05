@@ -52,3 +52,9 @@ h1 {
 .sp {
     color: rgba(0, 0, 0, 0.535);
 }
+.empname{
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    color: white;
+    font-size: 25px;
+}
